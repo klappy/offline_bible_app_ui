@@ -4,6 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var auth = require('node-auth');
 
 var dbConfig = require('./db');
 var mongoose = require('mongoose');
@@ -23,24 +24,31 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configuring Passport
-var passport = require('passport');
-var expressSession = require('express-session');
+var session = require('express-session');
 // TODO - Why Do we need this key ?
-app.use(expressSession({secret: 'mySecretKey'}));
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(session({secret: 'mySecretKey'}));
+
+mw = auth({
+  auth: {
+    host: 'https://staging-auth.sovee.com/'
+  },
+  loginErrorHandler: loginErrorHandler
+});
+
+function loginErrorHandler(req, res) {
+  return res.json('Login error.');
+}
+
+app.use('/api', mw.api);
+app.use(/^\/(?!api(\/|$)).*$/, mw.app);
+app.use(mw.routes);
 
  // Using the flash middleware provided by connect-flash to store messages in session
  // and displaying in templates
 var flash = require('connect-flash');
 app.use(flash());
 
-// Initialize Passport
-var initPassport = require('./passport/init');
-initPassport(passport);
-
-var routes = require('./routes/index')(passport);
+var routes = require('./routes/index');
 app.use('/', routes);
 
 /// catch 404 and forward to error handler
