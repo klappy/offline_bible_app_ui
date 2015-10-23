@@ -3,3 +3,9 @@ node_modules
 *\#*#
 uploads
 *.log
+
+MyUI/node_modules/
+MyUI/public/scripts/lib/
+MyUI/*.idea/
+MyUI/public/scripts/webapp.min.js
+MyUI/tools/webapp.min.js
