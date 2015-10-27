@@ -8,9 +8,6 @@ app:
   environment:
     AUTH_HOST: https://staging-auth.sovee.com
   links:
-    - db
     - redis
-db:
-  image: mongo:2.6
 redis:
   image: redis:latest
