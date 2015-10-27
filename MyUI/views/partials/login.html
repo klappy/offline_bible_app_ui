@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#user" role="tab" data-toggle="tab" class="big">Login</a></li>
+        <li><a href="#new" role="tab" data-toggle="tab" class="big">Sign Up</a> </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade" id="new">
+          <form class="form col-md-12 center-block" method="post" role="form" ng-submit="vm.signup()" >
+            <fieldset>
+              <div class="form-group">
+                <div class="right-inner-addon">
+                  <i class="glyphicon glyphicon-asterisk"></i>
+                  <input class="form-control input-lg" ng-model="vm.username" placeholder="Type your username..."  type="text" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="right-inner-addon">
+                  <i class="glyphicon glyphicon-lock"></i>
+                  <input class="form-control input-lg" ng-model="vm.password" placeholder="Type your password..." type="password" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="right-inner-addon">
+                  <i class="glyphicon glyphicon-lock"></i>
+                  <input class="form-control input-lg" ng-model="vm.check_password" placeholder="Confirm your password..."  type="password" required>
+                </div>
+              </div>
+            <!--   <div class="form-group">
+               <div class="right-inner-addon">
+                 <div class="checkbox">
+                   <label>
+                     <input type="checkbox"> I agree with the <a data-toggle="modal" href="#tcModal">Terms and Conditions</a>
+                   </label>
+                 </div>
+                </div>
+              </div> -->
+            </fieldset>
+            <div>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Signup</button>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div ng-show="failed_register" class="alert alert-danger">
+                    {{vm.failed_register}}
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade in active" id="user">
+          <form class="form col-md-12 center-block" method="post" ng-submit="vm.submit()" role="form">
+            <fieldset>
+              <div class="form-group">
+                <div class="right-inner-addon">
+                  <i class="glyphicon glyphicon-envelope"></i>
+                  <input class="form-control input-lg" ng-model="vm.username" name="username" placeholder="Type your username..." type="text" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="right-inner-addon">
+                  <i class="glyphicon glyphicon-lock"></i>
+                  <input class="form-control input-lg" ng-model="vm.password" placeholder="Type your password..." type="password" required>
+                </div>
+              </div>
+            </fieldset>
+            <div class="text-center">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">LOGIN</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <form ng-submit="vm.submit()" role="form" class="form-inline">
+              <fieldset>
+                <legend>Login</legend>
+                <div class="form-group">
+                  <input type="text" class="form-control" ng-model="vm.username" placeholder="Type your username..." required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" ng-model="vm.password" placeholder="Type your password..." required>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Login"/>
+              </fieldset>
+            </form>
+        </div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div ng-show="failed_login" class="alert alert-danger">
+          <span class="glyphicon glyphicon-star"></span> {{vm.failed_login}}
+        </div>
+      </div>
+    </div>
+
+</div> -->

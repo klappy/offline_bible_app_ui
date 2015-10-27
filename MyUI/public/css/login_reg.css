@@ -1,0 +1,122 @@
+body {
+	padding:10px;
+}
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+}
+
+.nav-tabs {
+    text-align:center;
+}
+.big{font-size:19px;}
+ul{padding-bottom:20px;}
+.q, p,i {
+	color: #b7bbc4;
+}
+
+
+
+
+
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    padding-right: 30px;    
+}
+.right-inner-addon i {
+    position: absolute;
+    right: 0px;
+    padding: 17px 12px;
+    pointer-events: none;
+}
+
+
+
+
+
+
+.usericon input{
+    padding-left:25px;
+}
+.usericon:before{
+    opacity:.8;
+    height:100%;
+    width:25px;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    position: absolute;
+    content:"\e008";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+.form-control[type="search"]::-webkit-input-placeholder:first-letter {
+    font-family:"Glyphicons Halflings";
+}
+.form-control[type="search"]:-moz-placeholder:first-letter {
+    font-family:"Glyphicons Halflings";
+}
+.form-control[type="search"]::-moz-placeholder:first-letter {
+    font-family:"Glyphicons Halflings";
+}
+.form-control[type="search"]:-ms-input-placeholder:first-letter {
+    font-family:"Glyphicons Halflings";
+}
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: rgb(85, 85, 85);
+    cursor: default;
+    background-color: #eee;
+  border-radius:2px;
+    //border-width: 4px;
+    //border-style: solid;
+  border-color: transparent;
+    //border-bottom-color: #eee;
+    //-moz-border-bottom-colors: none;
+ 
+}
+.f{
+    padding-right: 0px;
+}
+  .input-lg{padding-top:0px;}
+.panel-body{background-color:#eee;}
+.form-control {
+	border-radius:2px !important;
+	border:1px solid #e5e5e5;
+	padding:15px;
+	margin-bottom:15px;
+	//height:56px;
+}
+.btn {
+	border-radius:2px !important;
+	padding:15px;
+	font-size:16px;
+	font-weight:600;
+	//height:56px;
+}
