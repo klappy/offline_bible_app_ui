@@ -62,6 +62,15 @@ module.exports = function(app, passport,models) {
     }),api.removeThing);
 
 
+
+
+
+
+
+
+
+
+
     function showClientRequest(req, res, next) {
         var request = {
             REQUEST : {
