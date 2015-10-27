@@ -10,6 +10,8 @@ module.exports = function(connection) {
         username: String,
         password: String,
         email: String,
+        firstname: String,
+        lastname: String,
         token : {
             auth_token: String,
             createDate: {type: Date, required: true, default: moment()}

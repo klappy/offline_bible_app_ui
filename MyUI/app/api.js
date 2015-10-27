@@ -19,7 +19,9 @@ module.exports = function(models){
                 if (user) {
                     res.send(403, {'message': 'User already exist!'});
                 }else {
-                    var newUser = new User({ username: body.username,email: body.email, password:body.password})
+                    var newUser = new User({ username: body.username, email: body.email,
+                                             password: body.password, firstname: body.firstname,
+                                            lastname: body.lastname})
                     newUser.save(function (err, user) {
                         if (err){
                             res.send(500, {'message': err});
