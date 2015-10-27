@@ -15,14 +15,14 @@
             <li ng-hide="vm.isAuthenticated"><a href="#/register">Register</a></li>
 
             <li ng-show="vm.isAuthenticated"><a href="#/home">Home</a></li>
-            <li ng-show="vm.isAuthenticated" class="dropdown">
+            <!-- <li ng-show="vm.isAuthenticated" class="dropdown">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown">Actions <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#/person">Add Person</a></li>
                     <li><a href="#/thing">Create Thing</a></li>
 
                 </ul>
-            </li>
+            </li> -->
             <li ng-show="vm.isAuthenticated"><a href="" ng-click="vm.logout()">Logout</a></li>
         </ul>
 
