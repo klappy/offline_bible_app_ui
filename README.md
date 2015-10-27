@@ -4,7 +4,7 @@ Steps to run the app
 * Build and install dependencies.
 ```
 docker-compose build
-docker-compose npm install
+docker-compose run app npm install
 ```
 * Start application
 ```
