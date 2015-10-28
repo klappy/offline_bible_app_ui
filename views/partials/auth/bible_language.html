@@ -4,5 +4,172 @@
 
 <div class="container-fluid">
 
-hello
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+      <div class="row">
+          <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-13">
+
+                <div class="panel panel-info">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Exodus</div>
+
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <th class="text-center" width="30%">Chapter</th>
+                            <th class="text-center" width="30%">Status</th>
+                            <th class="text-center" width="20%"><span class="glyphicon glyphicon-pencil"></span></th>
+                            <th class="text-center" width="20%"><span class="glyphicon glyphicon-trash"></span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center" ng-hide="thing.modify"><a href="#/things/{{thing._id}}">Jhon</a></td>
+                            <td class="text-center" ng-hide="thing.modify">Checked Out</td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,true)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Export XlS
+                                </button>
+                            </td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" ng-click="vm.deleteThing($index)" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Export USX
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="text" class="form-control" ng-model="thing.name" placeholder="thing.name" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="number" class="form-control" ng-model="thing.size" placeholder="thing.size" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,false)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Update
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button ng-disabled="true" type="button" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                </button>
+                            </td>
+                        </tr>
+						<tr>
+                            <td class="text-center" ng-hide="thing.modify"><a href="#/things/{{thing._id}}">Acts</a></td>
+                            <td class="text-center" ng-hide="thing.modify">Available</td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,true)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Export XlS
+                                </button>
+                            </td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" ng-click="vm.deleteThing($index)" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Export USX
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="text" class="form-control" ng-model="thing.name" placeholder="thing.name" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="number" class="form-control" ng-model="thing.size" placeholder="thing.size" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,false)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Update
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button ng-disabled="true" type="button" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+     
+            <div class="col-md-13">
+
+                <div class="panel panel-info">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Genesis</div>
+
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <th class="text-center" width="30%">Chapter</th>
+                            <th class="text-center" width="30%">Status</th>
+                            <th class="text-center" width="20%"><span class="glyphicon glyphicon-pencil"></span></th>
+                            <th class="text-center" width="20%"><span class="glyphicon glyphicon-trash"></span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center" ng-hide="thing.modify"><a href="#/things/{{thing._id}}">Jhon</a></td>
+                            <td class="text-center" ng-hide="thing.modify">Checked Out</td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,true)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Export XlS
+                                </button>
+                            </td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" ng-click="vm.deleteThing($index)" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Export USX
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="text" class="form-control" ng-model="thing.name" placeholder="thing.name" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="number" class="form-control" ng-model="thing.size" placeholder="thing.size" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,false)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Update
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button ng-disabled="true" type="button" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                </button>
+                            </td>
+                        </tr>
+						<tr>
+                            <td class="text-center" ng-hide="thing.modify"><a href="#/things/{{thing._id}}">Acts</a></td>
+                            <td class="text-center" ng-hide="thing.modify">Available</td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,true)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Export XlS
+                                </button>
+                            </td>
+                            <td class="text-center" ng-hide="thing.modify">
+                                <button type="button" ng-click="vm.deleteThing($index)" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Export USX
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="text" class="form-control" ng-model="thing.name" placeholder="thing.name" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <input type="number" class="form-control" ng-model="thing.size" placeholder="thing.size" required>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="vm.updateThing($index,false)">
+                                    <span class="glyphicon glyphicon-pencil"></span> Update
+                                </button>
+                            </td>
+                            <td class="text-center" ng-show="thing.modify">
+                                <button ng-disabled="true" type="button" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
 </div>
