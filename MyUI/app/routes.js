@@ -65,12 +65,6 @@ module.exports = function(app, passport,models) {
 
 
 
-
-
-
-
-
-
     function showClientRequest(req, res, next) {
         var request = {
             REQUEST : {

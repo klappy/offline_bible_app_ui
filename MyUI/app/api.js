@@ -121,7 +121,7 @@ module.exports = function(models){
                 if (err){
                     res.send(500, {'message': err});
                 }
-                res.json({ 'message': 'Thing was successfully created!'});
+                res.json({ 'message': 'Language added successfully!'});
             });
 
         },
@@ -138,7 +138,7 @@ module.exports = function(models){
                 if (err){
                     res.send(500, {'message': err});
                 }
-                res.json({ 'message': 'Thing was successfully updated!'});
+                res.json({ 'message': 'Language was successfully updated!'});
             })
 
         },
@@ -150,7 +150,7 @@ module.exports = function(models){
                 if (err){
                     res.send(500, {'message': err});
                 }
-                res.json({ 'message': 'Thing was successfully removed!'});
+                res.json({ 'message': 'Language was successfully removed!'});
             })
 
         },

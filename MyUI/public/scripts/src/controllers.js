@@ -155,7 +155,7 @@ define(['angular'], function (angular) {
 
             vm.ResourceService.updateThing(thing).then(function(){
                 vm.things[index].modify=false;
-                vm.toastr.success("Thing successfully updated!");
+                vm.toastr.success("Language successfully updated!");
             },function(data, status) {
                 if(status!==401){
                     vm.toastr.error(data);
@@ -171,7 +171,7 @@ define(['angular'], function (angular) {
 
         vm.ResourceService.deleteThing(thing).then(function(){
             vm.things.splice(index, 1);
-            vm.toastr.success("Thing successfully deleted!");
+            vm.toastr.success("Language successfully deleted!");
         },function(data, status) {
             if(status!==401){
                 vm.toastr.error(data);
