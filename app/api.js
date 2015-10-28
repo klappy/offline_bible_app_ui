@@ -155,6 +155,18 @@ module.exports = function(models){
 
         },
 
+        getThing: function(req,res)
+        {
+            var _id = req.params.id;
+            Thing.find({_id:_id}, function(err, user){
+                if (err){
+                    res.send(500, {'message': err});
+                }
+                res.json({thing: user, "message": "think show"})
+            })
+
+        },
+
         getThings: function(req,res)
         {
             Thing.find(function(err,things){

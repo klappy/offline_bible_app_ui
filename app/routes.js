@@ -57,6 +57,10 @@ module.exports = function(app, passport,models) {
         session: false
     }),api.updateThing);
 
+    app.get('/api/thing/:id', showClientRequest, passport.authenticate('local-authorization', {
+        session: false
+    }),api.updateThing);
+
     app.delete('/api/thing/:id', showClientRequest, passport.authenticate('local-authorization', {
         session: false
     }),api.removeThing);

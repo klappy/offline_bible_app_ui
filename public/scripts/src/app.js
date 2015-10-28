@@ -97,6 +97,12 @@ define([
                     controllerAs: 'vm',
                     access: { requiredLogin: true }
                 }).
+                when('/things/:id', {
+                    templateUrl: 'partials/auth/bible_language',
+                    controller: 'ThingCtrl',
+                    controllerAs: 'vm',
+                    access: { requiredLogin: true }
+                }).
                 otherwise({
                     redirectTo: '/login'
                 });

@@ -69,6 +69,9 @@ define(['angular'], function (angular) {
             updateThing : function(thing){
                 return _ajaxRequest('PUT', '/api/thing/'+thing._id, {thing : thing}, null);
             },
+            getThing : function(thing){
+                return _ajaxRequest('GET', '/api/thing/'+thing._id, {thing : thing}, null);
+            },
             updatePerson: function(person){
                 return _ajaxRequest('PUT', '/api/person/'+person._id, {person : person}, null);
             },

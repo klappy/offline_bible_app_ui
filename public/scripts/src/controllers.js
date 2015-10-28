@@ -240,6 +240,21 @@ define(['angular'], function (angular) {
         });
     };
 
+     ThingCtrl.prototype.getThing = function()
+    {
+        var vm = this;
+        var thing = {thing: vm.thing};
+
+        vm.ResourceService.createThing(thing).then(function(data){
+            vm.thing = null;
+            vm.toastr.success(data.message);
+        },function(data, status) {
+            if(status!==401){
+                vm.toastr.error(data);
+            }
+        });
+    };
+
     return mainAppControllers;
 
 });
