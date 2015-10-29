@@ -33,17 +33,15 @@ require('./config/passport')(passport,models); // pass passport for configuratio
 app.set('port', port);
 app.use(logger('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser()); // get information from html forms
+// app.use(bodyParser()); // get information from html forms //body-parser deprecated bodyParser
 app.set('view engine', 'html'); // set up html for templating
 app.engine('.html', require('ejs').__express);
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.session({ secret: 'keyboard cat' }));// persistent login sessions
 app.use(methodOverride());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
 //app.use(flash()); // use connect-flash for flash messages stored in session
 
 //passport configuration
@@ -64,6 +62,6 @@ if (app.get('env') === 'production') {
 
 //express.vhost(vhost, app);
 
-var server = http.createServer(app).listen(app.get('port'), function () {
+var server = app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + vhost+":"+server.address().port);
 });
