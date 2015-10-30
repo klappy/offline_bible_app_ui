@@ -58,8 +58,10 @@ define([
     });
 
 
-    mainApp.config(['$routeProvider',
-        function($routeProvider) {
+    mainApp.config(['$routeProvider', '$locationProvider',
+        function($routeProvider, $locationProvider) {
+
+            $locationProvider.html5Mode(true);
 
             $routeProvider.
                 when('/login', {
