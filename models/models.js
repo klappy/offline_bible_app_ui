@@ -1,6 +1,6 @@
 module.exports = function(connection) {
 
-    var User = require('./user')(connection);
+    var User = require('./user');
     var Person = require('./person')(connection);
     var Thing = require('./thing')(connection);
 

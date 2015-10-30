@@ -1,10 +1,14 @@
+var express = require('express');
+var router = express.Router();
+var User = require('../models/user');
+
 module.exports = function(app, passport,models) {
 
     var api = require('./api.js')(models);
 
-    app.get('/', function(req, res){
-        res.render('index');
-    });
+    // app.get('/', function(req, res){
+    //     res.render('index');
+    // });
 
     app.get('/partials/:name', showClientRequest, function (req, res) {
         var name = req.params.name;
@@ -18,16 +22,17 @@ module.exports = function(app, passport,models) {
         res.render('partials/auth/' + name);
     });
 
-    app.post('/api/login', showClientRequest, passport.authenticate('local-login', {
-        session: false
-    }),api.login);
-
-    app.post('/api/signup', showClientRequest, api.signup);
-
-
-    app.get('/api/logout', showClientRequest, passport.authenticate('local-authorization', {
-        session: false
-    }),api.logout);
+    // 
+    /* GET Home Page */
+    app.get('/home', function(req, res){
+     var authUser = req.session.user
+     return res.render('home', { user: User.info(authUser) });
+    });
+    /* GET Home Page */
+    app.get('/', function(req, res){
+     var authUser = req.session.user
+     return res.render('index', { user: User.info(authUser) });
+    });
 
     app.get('/api/people', showClientRequest, passport.authenticate('local-authorization', {
         session: false

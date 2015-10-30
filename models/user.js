@@ -1,35 +1,14 @@
-var mongoose = require('mongoose');
-var moment = require('moment');
-var expired_time = 60;
+var User = {};
+module.exports = User;
 
-module.exports = function(connection) {
-
-    var Schema = mongoose.Schema;
-
-    var userSchema = new Schema({
-        username: String,
-        password: String,
-        email: String,
-        firstname: String,
-        lastname: String,
-        token : {
-            auth_token: String,
-            createDate: {type: Date, required: true, default: moment()}
-        }
-
-    });
-
-    userSchema.methods.hasExpired = function() {
-        return (moment().diff(this.token.createDate, 'minutes')) > expired_time;
-
-    };
-
-    var User = connection.model('User', userSchema);
-
-
-    return User;
+/**
+ *
+ * Gathers important user info.
+ *
+ * @param {object} authUser
+ */
+User.info = function(authUser) {
+  var user = {firstName: authUser.info.name.split(/\s+/)[0], username: authUser.info.name, email: authUser.info.email, lastName: authUser.info.name.split(/\s+/)[1]};
+  return user;
 }
-
-
-
 

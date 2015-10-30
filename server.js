@@ -3,16 +3,16 @@
 */
 var express  = require('express');
 var mongoose = require('mongoose');
-var passport = require('passport');
+//var passport = require('passport');
 var flash    = require('connect-flash');
 var http = require('http');
 var path = path = require('path');
-var uuid = require('node-uuid');
-
+//var uuid = require('node-uuid');
+var auth = require('node-auth');
 
 var logger = require('morgan');
 var methodOverride = require('method-override');
-var session = require('express-session');
+
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var multer = require('multer');
@@ -27,7 +27,30 @@ var app = express();
 
 var connection = require('./config/database')(mongoose);
 var models = require('./models/models')(connection);
-require('./config/passport')(passport,models); // pass passport for configuration
+//require('./config/passport')(passport,models); // pass passport for configuration
+
+
+var session = require('express-session');
+
+// TODO - Why Do we need this key ?
+app.use(session({secret: 'mySecretKey'}));
+
+
+mw = auth({
+  auth: {
+    host: 'https://staging-auth.sovee.com/'
+  },
+  loginErrorHandler: loginErrorHandler
+});
+
+function loginErrorHandler(req, res) {
+return res.json('Login error.');
+}
+
+var routes = require('./app/routes.js');
+app.use('/api', mw.api);
+app.use(/^\/(?!api(\/|$)).*$/, mw.app);
+app.use(mw.routes);
 
 // set up our express application
 app.set('port', port);
@@ -45,10 +68,10 @@ app.use(bodyParser.json());
 //app.use(flash()); // use connect-flash for flash messages stored in session
 
 //passport configuration
-app.use(passport.initialize());
+//app.use(passport.initialize());
 //app.use(passport.session());// persistent login sessions
 
-require('./app/routes.js')(app, passport,models); // load our routes and pass in our app and fully configured passport
+//require('./app/routes.js')(app, passport,models); // load our routes and pass in our app and fully configured passport
 
 // development only
 if (app.get('env') === 'development') {
