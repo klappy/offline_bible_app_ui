@@ -20,13 +20,13 @@ var errorHandler = require('errorhandler');
 var json = require('json')
 
 var vhost = 'nodejsapp.local'
-var port     = process.env.PORT || 4000;
+var port     = process.env.PORT || 3000;
 var ip     = process.env.IP || "localhost";
 
 var app = express();
 
-var connection = require('./config/database')(mongoose);
-var models = require('./models/models')(connection);
+//var connection = require('./config/database')(mongoose);
+//var models = require('./models/models')(connection);
 //require('./config/passport')(passport,models); // pass passport for configuration
 
 
