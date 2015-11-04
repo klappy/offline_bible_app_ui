@@ -1,8 +1,8 @@
 module.exports = function(models){
 
-    var User = models.user;
-    var Person = models.person;
-    var Thing = models.thing;
+    // var User = models.user;
+    // var Person = models.person;
+    // var Thing = models.thing;
 
     return {
 

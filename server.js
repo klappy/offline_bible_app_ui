@@ -47,7 +47,7 @@ function loginErrorHandler(req, res) {
 return res.json('Login error.');
 }
 
-var routes = require('./app/routes.js');
+var routes = require('./app/routes.js')(app);
 app.use('/api', mw.api);
 app.use(/^\/(?!api(\/|$)).*$/, mw.app);
 app.use(mw.routes);
