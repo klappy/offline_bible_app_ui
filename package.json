@@ -19,6 +19,7 @@
     "node-auth": "git+https://firma8deploy:NGSUqNqLMnmSLt7qd@bitbucket.org/firma8/nodeauth.git#v2.0.2",
     "passport": "~0.2.0",
     "passport-local": "~1.0.0",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "~1.0.0",
+    "request": "^2.64.0"
   }
 }

@@ -9,6 +9,7 @@ block content
       br
       br
       div.col-md-12.col-sm-12.col-xs-12
+      #gateway_language_bible
         .panel.panel-default
           // Default panel contents
           .panel-heading Bible List
@@ -24,9 +25,9 @@ block content
             tbody
               tr
                 th 1
-                td Jacob
-                td Thornton
-                td @fat
+                td #{gateway_language_bible.bibleId}
+                td #{gateway_language_bible.language}
+                td #{gateway_language_bible.version}
                 td.btn.btn-default.btn-sm show
                 td.btn.btn-primary.btn-sm edit
                 td.btn.btn-danger.btn-sm delete
