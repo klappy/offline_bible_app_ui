@@ -16,6 +16,15 @@ router.get('/', function(req, res){
   return res.render('home', { user: User.info(authUser) });
 });
 
+/* GET Book Page */
+router.get('/books', function(req, res){
+  res.render('books');
+});
+
+/* GET Chapter Page */
+router.get('/chapters', function(req, res){
+  res.render('chapters');
+});
 
 
 
