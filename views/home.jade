@@ -24,9 +24,37 @@ block content
             tbody
               tr
                 th 1
-                td Jacob
+                td NIV
                 td Thornton
                 td @fat
                 td.btn.btn-default.btn-sm show
                 td.btn.btn-primary.btn-sm edit
                 td.btn.btn-danger.btn-sm delete
+
+    #myModal.modal.fade(role='dialog')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal') ×
+            h5.modal-title Import New Gateway Language Bible
+          .modal-body
+            form.form-horizontal(role='form')
+              .form-group
+                label.col-sm-3.control-label(for='bibleid') Bible Id
+                .col-sm-9
+                  input#bibleid.form-control(type='bibleid', placeholder='enter Bible id')
+              .form-group
+                label.col-sm-3.control-label(for='langcode') Language Code
+                .col-sm-9
+                  input#langcode.form-control(type='langcode', placeholder='enter language code')
+              .form-group
+                label.col-sm-3.control-label(for='version') Version
+                .col-sm-9
+                  input#version.form-control(type='version', placeholder='enter version')
+              .form-group
+                label.col-sm-3.control-label(for='exampleInputFile') URL/File
+                .col-sm-9
+                  input#exampleInputFile(type='file')
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Import
