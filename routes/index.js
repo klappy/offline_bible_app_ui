@@ -26,5 +26,8 @@ router.get('/chapters', function(req, res){
   res.render('chapters');
 });
 
-
+/* GET Bible Page */
+router.get('/bible', function(req, res){
+  res.render('bible');
+});
 
