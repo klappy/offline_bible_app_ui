@@ -28,9 +28,12 @@ block content
                 td #{gateway_language_bible.bibleId}
                 td #{gateway_language_bible.language}
                 td #{gateway_language_bible.version}
+
                 td.btn.btn-default.btn-sm show
                 td.btn.btn-primary.btn-sm edit
                 td.btn.btn-danger.btn-sm delete
+          .panel-footer
+            button.btn.btn-primary(type='button', data-target="#myModal", data-toggle="modal") Upload Bible
 
     #myModal.modal.fade(role='dialog')
       .modal-dialog
@@ -43,6 +46,7 @@ block content
               .form-group
                 label.col-sm-3.control-label(for='bibleid') Bible Id
                 .col-sm-9
+
                   input#bibleid.form-control(type='bibleid', placeholder='enter Bible id')
               .form-group
                 label.col-sm-3.control-label(for='langcode') Language Code
@@ -53,9 +57,10 @@ block content
                 .col-sm-9
                   input#version.form-control(type='version', placeholder='enter version')
               .form-group
-                label.col-sm-3.control-label(for='inputFile') URL/File
+                label.col-sm-3.control-label(for='exampleInputFile') URL/File
                 .col-sm-9
-                  input#inputFile.form-control(type='inputFile', placeholder='enter path')
+                  input#exampleInputFile.form-control(type='exampleInputFile', placeholder='enter path')
           .modal-footer
             button.btn.btn-default(type='button', data-dismiss='modal') Close
             button.btn.btn-primary(type='button') Import
+

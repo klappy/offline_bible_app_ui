@@ -1,7 +1,7 @@
 doctype
 html( lang="en" )
   head
-    title Baking Bootstrap Snippets with Jade
+    title Bible App UI
     meta( charset='utf-8' )
     meta( http-equiv='X-UA-Compatible', content='IE=edge' )
     meta( name='viewport', content='width=device-width, initial-scale=1.0' )
@@ -17,15 +17,18 @@ html( lang="en" )
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href='#') Bible Offline App
+        a.navbar-brand(href='/') Bible Offline App
       #navbar-inverse.collapse.navbar-collapse
         ul.nav.navbar-nav.pull-right
           li
-            a(href="#", data-target="#myModal", data-toggle="modal") Upload Bible
-          li
-            a(href='#about') About
-          li
-            a(href='#contact') Contact
+            a(href='/') Home
+          li.dropdown
+                a.dropdown-toggle( href="#", data-toggle="dropdown", role="button", aria-expanded="false" ) Bible Action
+                    span.caret
+                ul.dropdown-menu( role="menu" )
+                    li: a( href="/books" ) List Books
+                    li.divider
+                    li: a( href="/chapters" ) List Chapters
           li
             a(href='/auth/logout') Logout
     div.container
