@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  div.container
+    div.row
+      br
+      br
+      br
+      br
+      br
+      div.col-md-12.col-sm-12.col-xs-12
+        .panel.panel-default
+          // Default panel contents
+          .panel-heading Book List
+          // Table
+          table.table
+            thead
+              tr
+                th Bible Id
+                  th version
+                  th Code
+                  th Books
+                  th(colspan="3") Action
+            tbody
+              tr
+                th Kulvi
+                  td NIV
+                  td kul
+                  td 1
+                  td.btn.btn-default.btn-sm show
+                  td.btn.btn-primary.btn-sm edit
+                  td.btn.btn-danger.btn-sm delete
+          .panel-footer
+            button.btn.btn-primary(type='button', data-target="#bookModal", data-toggle="modal") Create Book
+    div.row
+      #bookModal.modal.fade(role='dialog')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal') ×
+              h5.modal-title Create Books
+            .modal-body
+              form.form-horizontal(name="book", method="post")
+                .form-group
+                  label.col-sm-3.control-label(for='bookId') Book Id
+                  .col-sm-9
+                    input#bookId.form-control(type='bookId', placeholder='enter Book id')
+                .form-group
+                  label.col-sm-3.control-label(for='url') Url
+                  .col-sm-9
+                    input#url.form-control(type='url', placeholder='enter url')
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
+              button.btn.btn-primary(type='button') Add

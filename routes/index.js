@@ -14,6 +14,7 @@ router.get('/home', function(req, res){
 /* GET Home Page */
 router.get('/', function(req, res){
   var authUser = req.session.user
+  console.log(authUser);
   return res.render('home', { gateway_language_bible: Gateway_language_bible.info(authUser) });
 });
 
@@ -23,7 +24,7 @@ router.get( "/auth/loginCallback", function(req, res){
     auth_token: res.params.token
   }
   app.use(session(sess));
-  
+
 })
 
 

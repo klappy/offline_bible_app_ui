@@ -1,0 +1,54 @@
+extends layout
+
+block content
+   div.container
+    div.row
+      br
+      br
+      br
+      br
+      br
+      div.col-md-12.col-sm-12.col-xs-12
+        .panel.panel-default
+          // Default panel contents
+          .panel-heading Chapter List
+          // Table
+          table.table
+            thead
+              tr
+                th Bible Id
+                th version
+                th Code
+                th Book Id
+                th(colspan="3") Action
+            tbody
+              tr
+                th 1
+                td NIV
+                td Thornton
+                td John
+                td.btn.btn-default.btn-sm show
+                td.btn.btn-primary.btn-sm edit
+                td.btn.btn-danger.btn-sm delete
+          .panel-footer
+            button.btn.btn-primary(type='button', data-target="#chapterModal", data-toggle="modal") Create Chapter
+    div.row
+      #chapterModal.modal.fade(role='dialog')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal') ×
+              h5.modal-title Create Chapters
+            .modal-body
+              form.form-horizontal(name="chapters", method="post")
+                .form-group
+                  label.col-sm-3.control-label(for='bookId') Chapters
+                  .col-sm-9
+                    input#chapter.form-control(type='chapter', placeholder='enter Chapter Number')
+                .form-group
+                  label.col-sm-3.control-label(for='url') Url
+                  .col-sm-9
+                    input#url.form-control(type='url', placeholder='enter url')
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
+              button.btn.btn-primary(type='button') Add
