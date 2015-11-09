@@ -20,16 +20,15 @@ block content
                 th Id
                 th Url
                 th Language
-                th Path
                 th Version
                 th(colspan="3") Action
             tbody
-              - for val in gateway_language_bibles
+              for val in api1
                 tr
-                  th= val.bibleId
-                  td= val.bibleUrl
-                  td= val.langCode
-                  td= val.version
+                  th #{val.bibleId}
+                  td #{val.bibleUrl}
+                  td #{val.langCode}
+                  td #{val.version}
                   td.btn.btn-default.btn-sm show
                   td.btn.btn-primary.btn-sm edit
                   td.btn.btn-danger.btn-sm delete
