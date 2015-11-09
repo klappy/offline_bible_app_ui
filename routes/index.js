@@ -10,7 +10,7 @@ router.get('/', function(req, res){
   var authUser = req.session.user
   console.log(authUser);
   console.log("auth");
-  return res.render('home', { gateway_language_bible: Gateway_language_bible.info(authUser) });
+  return res.render('home', { gateway_language_bibles: Gateway_language_bible.info(authUser) });
 });
 
 router.post('/create_bible', function(req, res){
