@@ -2,22 +2,39 @@ var Gateway_language_bible = {};
 var request = require('request');
 
 
-Gateway_language_bible.info =  function(authUser) {
+Gateway_language_bible.info =  function(authUser, body) {
+	var gateway_language_bible = {};
+  request("http://172.17.42.1:32774/api/bibles", function (error, response, body) {
+    if(error){
+      return console.log('Error:', error);
+    }
+		var resJson = JSON.parse(body);
+    console.log("##############");
+    console.log(resJson);
+    console.log("##############");
+    var bibleId   = resJson[0]["bibleId"];
+    var bibleUrl  = resJson[0]["bibleUrl"];
+    var version   = resJson[0]["version"];
+    var language  = resJson[0]["language"];
 
-	// var gateway_language_bible = {};
-
-	// request("https://staging-bible-api.sovee.com/api/bibles", function (error, response, body) {
-
-	// 	console.log(error);
-	// 	console.log(body + "i am in model class");
-
-	// 	var resJson = JSON.parse(body);
-	// 	gateway_language_bible = {bibleId:resJson['bibleId'], version:resJson['version'], language:resJson['language']};
-
-	// });
-	var gateway_language_bible = {bibleId:'bibleId', version:'version', language:'hindi'};
+		gateway_language_bible = {bibleId : bibleId, bibleUrl : bibleUrl, version : version, language : language }
+    console.log(gateway_language_bible["bibleId"]);
+  });
 	return gateway_language_bible;
+
+  request({
+      url: 'http://172.17.42.1:32774/api/bibles',
+      method: 'POST',
+      headers: {name: 'content-type', value: 'application/json'},
+      // body: {}, function(error, response, body){
+      //   if(error) {
+      //       console.log(error);
+      //   } else {
+      //       console.log(response.statusCode, body);
+      //   }
+      // }
+      });
 }
 
-
 module.exports = Gateway_language_bible;
+

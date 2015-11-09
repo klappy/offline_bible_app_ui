@@ -24,10 +24,10 @@ block content
                 th(colspan="3") Action
             tbody
               tr
-                th 1
-                td #{gateway_language_bible.bibleId}
-                td #{gateway_language_bible.language}
-                td #{gateway_language_bible.version}
+                th #{gateway_language_bible["bibleId"]}
+                td #{gateway_language_bible["bibleUrl"]}
+                td #{gateway_language_bible["language"]}
+                td #{gateway_language_bible["version"]}
 
                 td.btn.btn-default.btn-sm show
                 td.btn.btn-primary.btn-sm edit
@@ -37,16 +37,15 @@ block content
 
     #myModal.modal.fade(role='dialog')
       .modal-dialog
-        .modal-content
-          .modal-header
-            button.close(type='button', data-dismiss='modal') ×
-            h5.modal-title Import New Gateway Language Bible
-          .modal-body
-            form.form-horizontal(role='form')
+        form.form-horizontal(action='/create_bible', method='post', role='form')
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal') ×
+              h5.modal-title Import New Gateway Language Bible
+            .modal-body
               .form-group
                 label.col-sm-3.control-label(for='bibleid') Bible Id
                 .col-sm-9
-
                   input#bibleid.form-control(type='bibleid', placeholder='enter Bible id')
               .form-group
                 label.col-sm-3.control-label(for='langcode') Language Code
@@ -57,10 +56,10 @@ block content
                 .col-sm-9
                   input#version.form-control(type='version', placeholder='enter version')
               .form-group
-                label.col-sm-3.control-label(for='exampleInputFile') URL/File
+                label.col-sm-3.control-label(for='bibleUrl') URL/File
                 .col-sm-9
-                  input#exampleInputFile.form-control(type='exampleInputFile', placeholder='enter path')
-          .modal-footer
-            button.btn.btn-default(type='button', data-dismiss='modal') Close
-            button.btn.btn-primary(type='button') Import
+                  input#exampleInputFile.form-control(type='bibleUrl', placeholder='enter path')
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
+              button.btn.btn-primary(type='submit') Import
 
